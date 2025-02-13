@@ -1,8 +1,6 @@
 import streamlit as st
 import requests
 import datetime
-from streamlit_lottie import st_lottie
-import streamlit_option_menu as option_menu
 
 # Function to fetch current weather data
 def get_current_weather(city, api_key):
@@ -16,34 +14,18 @@ def get_forecast(city, api_key):
     response = requests.get(url)
     return response.json()
 
-# Function to load lottie animations
-def load_lottie_url(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
 # Streamlit app
 def main():
     st.set_page_config(page_title="Weather Forecast App", page_icon="⛅", layout="wide")
 
     # Sidebar menu
     with st.sidebar:
-        selected = option_menu.option_menu(
+        selected = st.radio(
             "Main Menu",
             ["Home", "Current Weather", "5-Day Forecast"],
-            icons=["house", "cloud-sun", "calendar-week"],
-            menu_icon="cast",
-            default_index=0,
+            index=1,
+            format_func=lambda x: x.replace("_", " ")
         )
-
-    # Lottie animation
-    lottie_weather = load_lottie_url("https://assets9.lottiefiles.com/packages/lf20_HpFqiS.json")
-    
-    if lottie_weather:
-        st_lottie(lottie_weather, height=200, key="weather")
-    else:
-        st.warning("Unable to load animation.")
 
     st.title("Weather Forecast App")
     api_key = st.secrets["OWM_API_KEY"]["key"]
