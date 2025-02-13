@@ -30,4 +30,4 @@ Follow these instructions to get a copy of the project up and running on your lo
    git clone https://github.com/ishaan2304/weather-forecast-app.git
    cd weather-forecast-app
 ## Live preview
-- [click](https://weatherishan.streamlit.app/)
+- [clickme](https://weatherishan.streamlit.app/)
