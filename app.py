@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import datetime
 
-# Function to fetch current weather data
+# Function to fetch current weather da
 def get_current_weather(city, api_key):
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
     response = requests.get(url)
@@ -60,3 +60,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
