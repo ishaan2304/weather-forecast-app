@@ -57,7 +57,7 @@ def main():
                     st.write("---")
             else:
                 st.error("City not found. Please enter a valid city name.")
-
 if __name__ == "__main__":
     main()
+
 
