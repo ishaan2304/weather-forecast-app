@@ -18,7 +18,6 @@ def get_forecast(city, api_key):
 def main():
     st.set_page_config(page_title="Weather Forecast App", page_icon="⛅", layout="wide")
 
-    # Sidebar menu
     with st.sidebar:
         selected = st.radio(
             "Main Menu",
@@ -59,5 +58,6 @@ def main():
                 st.error("City not found. Please enter a valid city name.")
 if __name__ == "__main__":
     main()
+
 
 
