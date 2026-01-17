@@ -7,7 +7,7 @@ def get_current_weather(city, api_key):
     response = requests.get(url)
     return response.json()
     
-# Function to fetch 5-day weather forecast 
+# Function to fetch 5-day weather  
 def get_forecast(city, api_key):
     url = f'http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units=metric'
     response = requests.get(url)
@@ -57,6 +57,7 @@ def main():
                 st.error("City not found. Please enter a valid city name.")
 if __name__ == "__main__":
     main()
+
 
 
 
